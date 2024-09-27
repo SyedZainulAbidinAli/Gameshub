@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesHub</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="./images/logo2.png">
 </head>
 
@@ -190,47 +190,7 @@
     <div class="background"></div>
     <a class="topBtn" href="#home">🡱</a>
 </body>
-<script>
-    document.querySelectorAll('.tilt').forEach(element => {
-        element.addEventListener('mousemove', (e) => {
-            const { offsetWidth: width, offsetHeight: height } = element;
-            const { offsetX: x, offsetY: y } = e;
-            const xPercent = (x / width) * 100;
-            const yPercent = (y / height) * 100;
-
-            const tiltX = (yPercent - 50) * 0.1;
-            const tiltY = (xPercent - 50) * -0.1;
-
-            element.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-        });
-
-        element.addEventListener('mouseleave', () => {
-            element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-        });
-    });
-</script>
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyAaWK9DQdq6L6nVbTqfP7kK3wjmWk4DcdY",
-        authDomain: "syedaliaptech.firebaseapp.com",
-        projectId: "syedaliaptech",
-        storageBucket: "syedaliaptech.appspot.com",
-        messagingSenderId: "442833881444",
-        appId: "1:442833881444:web:c9d91eb665aa949e44d271",
-        measurementId: "G-TJ8YF8PDMS"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+<script src="app.js">
 </script>
 
 </html>
